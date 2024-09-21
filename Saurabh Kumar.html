@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Card</title>
+    <style>
+        @font-face {
+            font-family: 'Copperplate';
+            src: local('Copperplate'), local('Copperplate Gothic Bold');
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #add8e6;
+            color: #000;
+            width: 440px;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .header-container img {
+            height: 60px;
+        }
+
+        .header-title {
+            margin: 0;
+            font-family: 'Copperplate', 'Arial Black', sans-serif;
+            text-align: center;
+            flex-grow: 1;
+            font-size: 10px;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .card {
+            background: #eaf7ff;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            width: 400px;
+            height: auto;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .card img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            margin: 15px 0;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .details {
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .details .title {
+            font-weight: bold;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .details .title span {
+            flex: 1;
+        }
+
+        .details .title span:first-child {
+            flex: 0 0 180px;
+        }
+
+        .emergency-card {
+            background: #e7f3fe;
+            border-radius: 8px;
+            padding: 15px;
+            width: 400px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        .emergency-title {
+            color: red;
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .emergency-details {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .call-icon {
+            cursor: pointer;
+            color: #007bff;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
+        .blood-group {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .normal-text {
+            color: #555;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 48%;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 10;
+            max-width: 90%;
+        }
+
+        .popup h2 {
+            margin: 0 0 10px;
+        }
+
+        .popup-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .popup-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-row span {
+            flex: 1;
+            text-align: left;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #e63939;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/NTPC%20LOGO.png" alt="NTPC Logo">
+            <h1 class="header-title">Chatti Bariatu Coal Mining Project<br><span>चट्टी बारीयातू कोल खनन परियोजना</span></h1>
+            <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/NML%20LOGO.png" alt="NML Logo">
+        </div>
+    </header>
+
+    <!-- Saurabh Kumar's Employee Card -->
+    <div class="card">
+        <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/Saurabh.jfif" alt="Photo of Saurabh Kumar">
+        <h2>SAURABH KUMAR</h2>
+        <div class="details">
+            <div class="title"><span>EMPLOYEE ID</span>: <span>106484</span></div>
+            <div class="title"><span>CONTACT NO.</span>: <span><b>9473355688, 9740842608</b> <span class="call-icon" onclick="window.location='tel:9473355688';">📞</span></span></div>
+            <div class="title"><span>PROJECT/MINES</span>: <span>CBCMP, NTPC Mining Ltd.</span></div>
+            <div class="title"><span>DESIGNATION</span>: <span>Sr. Astt. Engineer</span></div>
+            <div class="title"><span>DEPARTMENT</span>: <span>MINING</span></div>
+            <div class="title"><span>OFFICIAL EMAIL</span>: <span>saurabhkumar05@ntpc.co.in</span></div>
+            <div class="title"><span>PERSONAL EMAIL</span>: <span>saurabh81888@gmail.com</span></div>
+            <div class="title"><span>CERTIFICATE TYPE(FMMC/SMMC)</span>: <span>NA</span></div>
+            <div class="title"><span>POST/WORK</span>: <span>Billing</span></div>
+        </div>
+    </div>
+
+    <!-- Emergency Details -->
+    <div class="emergency-card">
+        <h2 class="emergency-title">Emergency Details</h2>
+        <div class="emergency-details">
+            <div class="title"><span class="blood-group">BLOOD GROUP: <span style="color: red;">AB-</span> <span style="color: #555;">(AB Negative)</span></span></div>
+            <div class="title"><span>ANY MEDICAL CONDITION</span>: <span class="normal-text">No</span></div>
+            <div class="title"><span>ALLERGY</span>: <span class="normal-text">No</span></div>
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="showPopup('infoPopup')">INFO</button>
+            <button class="button" onclick="showPopup('sosPopup')" style="color: red;">
+                SOS ☎️
+            </button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Popup for INFO -->
+    <div class="popup" id="infoPopup">
+        <h2>INFORMATION</h2>
+        <p><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p>
+        <div class="popup-content">
+            <div class="popup-row"><span>Mine Agent:</span> <span>Mr. Pavan V. Khandwe <span class="call-icon" onclick="showNumbers('pavanNumbers')">📞</span></span></div>
+            <div class="popup-row"><span>Mine Manager:</span> <span>Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';">📞</span></span></div>
+            <div class="popup-row"><span>Safety Officer:</span> <span>Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';">📞</span></span></div>
+            <div class="popup-row"><span>Reporting Officer:</span> <span>Mr. Ashok Kumar <span class="call-icon" onclick="window.location='tel:7004012898';">📞</span></span></div>
+            <div class="popup-row"><span>Emergency Contact Person:</span> <span>Mr. Ganesh Sharma <span class="call-icon" onclick="showContactNumbers()">📞</span></span></div>
+            <div class="popup-row"><span>Relation:</span> <span>Father</span></div>
+            <div class="popup-row"><span>Contact Number:</span> <span>9471236223, 9661537666</span></div>
+            <div class="popup-row"><span>Employee Current Address:</span> <span>Laxmi Narayan Bhawan, Gali no. 2, Yashwant Nagar, Near Markham college Hazaribagh, PIN 825301</span></div>
+        </div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Popup for SOS -->
+    <div class="popup" id="sosPopup">
+        <h2 style="color: red;">SOS Alert</h2>
+        <p>In case of emergency, please contact the following:</p>
+        <div class="popup-content">
+            <div class="popup-row"><span>Mine Manager (NTPC):</span> <span>9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';">📞</span></span></div>
+            <div class="popup-row"><span>Safety Officer (NTPC):</span> <span>9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';">📞</span></span></div>
+            <div class="popup-row"><span>Safety Officer (MDO):</span> <span>8340261758 <span class="call-icon" onclick="showNumbers('safetyMdoNumbers')">📞</span></span></div>
+            <div class="popup-row"><span>Ambulance (NTPC):</span> <span>9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';">📞</span></span></div>
+            <div class="popup-row"><span>Ambulance (MDO):</span> <span>7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';">📞</span></span></div>
+            <div class="popup-row"><span>Fire Tender:</span> <span>7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';">📞</span></span></div>
+            <div class="popup-row"><span>Mine Security:</span> <span>8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';">📞</span></span></div>
+        </div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function showPopup(popupId) {
+            document.getElementById(popupId).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.style.display = 'none';
+            });
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function showContactNumbers() {
+            const numbers = "9471236223, 9661537666";
+            const selectedNumber = prompt("Select a number to call:\n" + numbers);
+            if (selectedNumber) {
+                window.location = `tel:${selectedNumber}`;
+            }
+        }
+
+        function showNumbers(numberListId) {
+            alert("Showing additional numbers for: " + numberListId);
+        }
+    </script>
+</body>
+</html>
