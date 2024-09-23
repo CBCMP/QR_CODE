@@ -182,16 +182,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            text-align: center;
+            text-align: center; 
         }
 
         .popup-row span {
             flex: 1;
-            text-align: left;
+            text-align: left; 
         }
 
         .popup-row span:first-child {
             flex: 0 0 40%; /* Fixed width for label */
+				/* text-align: right;  Align label to the right -new*/
+    		margin-right: 5px; /* Optional space between label and value-new */
         }
 
         .overlay {
@@ -260,10 +262,11 @@
             <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Mine Manager</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
             <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Safety Officer</span> <span>:Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
             <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Reporting Officer</span> <span>:Mr. Ashok Kumar <span class="call-icon" onclick="window.location='tel:7004012898';" style="font-size: 1.5vw;">📞</span></span></div>
-            <div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>------------------------------</span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>--------------------------------------------------------------</span></div>
 		<div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>EMERGENCY</span></div>
-		<div class="popup-row" style="text-align: center;"><span>Contact Person</span> <span>:Mr. Ganesh Sharma <span class="call-icon" onclick="showContactNumbers()" style="font-size: 1.5vw;">📞</span></span></div>
+		<div class="popup-row" style="text-align: center;"><span>Contact Person</span> <span>:Mr. Ganesh Sharma <span class="call-icon" onclick="window.location='tel:9471236223';" style="font-size: 1.5vw;">📞</span></span></div>
             <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Relation</span> <span>:Father</span></div>
+		<div class="popup-row" style="text-align: center;"><span>Contact Number</span> <span>:9471236223, 9661537666<span class="call-icon" onclick="window.location='tel:9661537666';" style="font-size: 1.5vw;">📞</span></span></div>
             <div class="popup-row" style="text-align: center;"><span>Employee Current Address</span> <span>:Laxmi Narayan Bhawan, Gali no. 2, Yashwant Nagar, Near Markham college Hazaribagh, PIN 825301</span></div>
         </div>
          <button onclick="closePopup()" style="margin-top: 2vw;">Close</button> <!-- Removed flex property -->
@@ -274,11 +277,11 @@
 	  <h2 style="color: red; font-size: 2.5vw;">SOS Alert</h2>
         <p style="font-size: 2vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p> <!-- No wrapping -->
         <div class="popup-content">
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Manager (NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer (NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer (MDO)</span> <span>:8340261758 <span class="call-icon" onclick="showNumbers('safetyMdoNumbers')" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance (NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance (MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Manager(NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer(NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer(MDO)</span> <span>:8340261758 <span class="call-icon" onclick="window.location='tel:8340261758';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance(NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance(MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
         	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Fire Tender</span> <span>:7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';" style="font-size: 1.5vw;">📞</span></span></div>
         	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Security</span> <span>:8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';" style="font-size: 1.5vw;">📞</span></span></div>
     	  </div>
