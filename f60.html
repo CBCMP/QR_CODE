@@ -17,21 +17,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 2vw;
         }
 
         header {
             background-color: #add8e6;
             color: #000;
-            width: 90%; /* Flexible width */
-            max-width: 440px; /* Maximum width */
-            padding: 10px 0;
+            width: 90%;
+            max-width: 300px;
+            padding: 2vw 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 5px;
+            margin-bottom: 2vw;
+		overflow: hidden; /* Prevents content from overflowing */
         }
 
         .header-container {
@@ -42,7 +43,10 @@
         }
 
         .header-container img {
-            height: 60px;
+            width: 15vw; /* Responsive image width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 80px; /* Limit maximum height */
+            object-fit: contain; /* Ensures image fits well within the container */
         }
 
         .header-title {
@@ -50,42 +54,52 @@
             font-family: 'Copperplate', 'Arial Black', sans-serif;
             text-align: center;
             flex-grow: 1;
-            font-size: 2.5vw; /* Flexible font size */
+		display: fixed;
+            font-size: 2.4vw; /* Responsive font size */
             line-height: 1.2;
             white-space: nowrap;
+		overflow: hidden; /* Ensures the title doesn't overflow */
+            text-overflow: ellipsis; /* Adds ellipsis for overflow text */
         }
 
-        .card {
+        .header-title span {
+            display: block;
+            font-size: 2vw; /* Smaller size for Hindi text */
+        }
+
+        .card, .emergency-card {
             background: #eaf7ff;
             border-radius: 8px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            width: 90%; /* Flexible width */
-            max-width: 400px; /* Maximum width */
-            height: auto;
+            padding: 3vw;
+            width: 90%;
+            max-width: 400px;
             text-align: center;
-            margin-top: 5px;
+            margin-top: 2vw;
         }
 
-        .card img {
-            width: 90px;
-            height: 90px;
+        .card img, .emergency-card img {
+            width: 20vw; /* Responsive image width */
+            height: auto; /* Responsive image height */
+            max-width: 90px; /* Maximum width */
+            max-height: 90px; /* Maximum height */
             border-radius: 50%;
             border: 2px solid #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		object-fit: cover;
         }
 
-        .card h2 {
-            margin: 15px 0;
-            font-size: 3vw; /* Flexible font size */
+        .card h2, .emergency-card h2 {
+            margin: 2vw 0;
+            font-size: 5vw; /* Responsive font size */
             color: #333;
         }
 
         .details {
             text-align: left;
-            font-size: 1rem; /* Flexible font size */
+            font-size: 2vw; /* Responsive font size */
             color: #333;
-            margin-top: 15px;
+            margin-top: 2vw;
         }
 
         .details .title {
@@ -93,7 +107,7 @@
             color: #555;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
+            margin-bottom: 1.5vw;
         }
 
         .details .title span {
@@ -101,43 +115,11 @@
         }
 
         .details .title span:first-child {
-            flex: 0 0 180px;
-        }
-
-        .emergency-card {
-            background: #e7f3fe;
-            border-radius: 8px;
-            padding: 15px;
-            width: 90%; /* Flexible width */
-            max-width: 400px; /* Maximum width */
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            text-align: left;
-            margin-top: 5px;
-        }
-
-        .emergency-title {
-            color: red;
-            margin-bottom: 10px;
-            font-size: 2.5vw; /* Flexible font size */
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .emergency-details {
-            font-size: 1rem; /* Flexible font size */
-            color: #333;
-            font-weight: bold;
-        }
-
-        .call-icon {
-            cursor: pointer;
-            color: #007bff;
-            font-size: 18px;
-            margin-left: 5px;
+            flex: 0 0 40%; /* Fixed width for label */
         }
 
         .blood-group {
-            color: #333;
+            color: red;
             font-weight: bold;
         }
 
@@ -146,9 +128,9 @@
         }
 
         .button-container {
-            display: flex;
+            display: fixed;
             justify-content: space-between;
-            margin-top: 10px;
+            margin-top: 2vw;
         }
 
         .button {
@@ -156,18 +138,17 @@
             color: white;
             border: none;
             border-radius: 5px;
-            padding: 10px;
+            padding: 2vw;
             cursor: pointer;
             width: 48%;
             text-align: center;
-            font-size: 1rem; /* Flexible font size */
+            font-size: 2vw; /* Responsive font size */
         }
 
         .button:hover {
             background-color: #0056b3;
         }
 
-        /* Popup styles */
         .popup {
             display: none;
             position: fixed;
@@ -177,21 +158,21 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            padding: 20px;
+            padding: 4vw;
             z-index: 10;
             max-width: 90%;
         }
 
         .popup h2 {
-            margin: 0 0 10px;
-            font-size: 2vw; /* Flexible font size */
+            margin: 0 0 1vw;
+            font-size: 3vw; /* Responsive font size */
         }
 
         .popup-content {
-            display: flex;
+            display: fixed;
             flex-direction: column;
-            gap: 10px;
-            font-size: 1rem; /* Flexible font size */
+            gap: 3vw;
+            font-size: 2vw; /* Responsive font size */
         }
 
         .popup-row {
@@ -206,18 +187,8 @@
             text-align: left;
         }
 
-        .popup button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: #ff4c4c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .popup button:hover {
-            background-color: #e63939;
+        .popup-row span:first-child {
+            flex: 0 0 40%; /* Fixed width for label */
         }
 
         .overlay {
@@ -236,7 +207,10 @@
     <header>
         <div class="header-container">
             <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/NTPC%20LOGO.png" alt="NTPC Logo">
-            <h1 class="header-title">Chatti Bariatu Coal Mining Project<br><span>चट्टी बारीयातू कोल खनन परियोजना</span></h1>
+            <h1 class="header-title">
+                Chatti Bariatu Coal Mining Project
+                <span>चट्टी बारीयातू कोल खनन परियोजना</span>
+            </h1>
             <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/NML%20LOGO.png" alt="NML Logo">
         </div>
     </header>
@@ -246,7 +220,7 @@
         <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/Saurabh.jfif" alt="Photo of Saurabh Kumar">
         <h2>SAURABH KUMAR</h2>
         <div class="details">
-            <div class="title"><span>EMPLOYEE ID</span>: <span>106484</span></div>
+             <div class="title"><span>EMPLOYEE ID</span>: <span>106484</span></div>
             <div class="title"><span>CONTACT NO.</span>: <span><b>9473355688, 9740842608</b> <span class="call-icon" onclick="window.location='tel:9473355688';">📞</span></span></div>
             <div class="title"><span>PROJECT/MINES</span>: <span>CBCMP, NTPC Mining Ltd.</span></div>
             <div class="title"><span>DESIGNATION</span>: <span>Sr. Astt. Engineer</span></div>
@@ -258,19 +232,17 @@
         </div>
     </div>
 
-    <!-- Emergency Details -->
+    <!-- Emergency Details Card -->
     <div class="emergency-card">
         <h2 class="emergency-title">Emergency Details</h2>
-        <div class="emergency-details">
-            <div class="title"><span class="blood-group">BLOOD GROUP: <span style="color: red;">AB-</span> <span style="color: #555;">(AB Negative)</span></span></div>
+        <div class="details">
+            <div class="title"><span>Blood Group</span>: <span class="blood-group">AB- (AB Negative)</span></div>
             <div class="title"><span>ANY MEDICAL CONDITION</span>: <span class="normal-text">No</span></div>
             <div class="title"><span>ALLERGY</span>: <span class="normal-text">No</span></div>
         </div>
         <div class="button-container">
             <button class="button" onclick="showPopup('infoPopup')">INFO</button>
-            <button class="button" onclick="showPopup('sosPopup')" style="color: red;">
-                SOS ☎️
-            </button>
+            <button class="button" onclick="showPopup('sosPopup')" style="color: red;">SOS ☎️</button>
         </div>
     </div>
 
@@ -281,13 +253,12 @@
         <h2>INFORMATION</h2>
         <p><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p>
         <div class="popup-content">
-            <div class="popup-row"><span>Mine Agent:</span> <span>Mr. Pavan V. Khandwe <span class="call-icon" onclick="showNumbers('pavanNumbers')">📞</span></span></div>
+            <div class="popup-row"><span>Mine Agent:</span> <span>Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650992847';">📞</span></span></div>
             <div class="popup-row"><span>Mine Manager:</span> <span>Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';">📞</span></span></div>
             <div class="popup-row"><span>Safety Officer:</span> <span>Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';">📞</span></span></div>
             <div class="popup-row"><span>Reporting Officer:</span> <span>Mr. Ashok Kumar <span class="call-icon" onclick="window.location='tel:7004012898';">📞</span></span></div>
             <div class="popup-row"><span>Emergency Contact Person:</span> <span>Mr. Ganesh Sharma <span class="call-icon" onclick="showContactNumbers()">📞</span></span></div>
             <div class="popup-row"><span>Relation:</span> <span>Father</span></div>
-            <div class="popup-row"><span>Contact Number:</span> <span>9471236223, 9661537666</span></div>
             <div class="popup-row"><span>Employee Current Address:</span> <span>Laxmi Narayan Bhawan, Gali no. 2, Yashwant Nagar, Near Markham college Hazaribagh, PIN 825301</span></div>
         </div>
         <button onclick="closePopup()">Close</button>
@@ -310,28 +281,25 @@
     </div>
 
     <script>
-        function showPopup(popupId) {
-            document.getElementById(popupId).style.display = 'block';
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
             document.getElementById('overlay').style.display = 'block';
         }
 
         function closePopup() {
-            document.querySelectorAll('.popup').forEach(popup => {
+            const popups = document.querySelectorAll('.popup');
+            popups.forEach(popup => {
                 popup.style.display = 'none';
             });
             document.getElementById('overlay').style.display = 'none';
         }
 
         function showContactNumbers() {
-            const numbers = "9471236223, 9661537666";
-            const selectedNumber = prompt("Select a number to call:\n" + numbers);
-            if (selectedNumber) {
-                window.location = `tel:${selectedNumber}`;
-            }
+            alert('Contact Numbers for Mr. Ganesh Sharma: 9471236223, 9661537666');
         }
 
-        function showNumbers(numberListId) {
-            alert("Showing additional numbers for: " + numberListId);
+        function showNumbers(id) {
+            alert('Safety Officer (MDO) Numbers: 8340261758');
         }
     </script>
 </body>
