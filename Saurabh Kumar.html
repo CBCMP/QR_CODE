@@ -24,7 +24,7 @@
             background-color: #add8e6;
             color: #000;
             width: 90%;
-            max-width: 440px;
+            max-width: 300px;
             padding: 2vw 0;
             display: flex;
             justify-content: space-between;
@@ -32,18 +32,23 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 2vw;
+		overflow: hidden; /* Prevents content from overflowing */
         }
 
         .header-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
+            width: 150%;
+		max-width: 500px; /* Set a maximum width if desired */
+		margin: 0 auto; /* Center align the header */
         }
 
         .header-container img {
-            height: 8vw; /* Responsive image height */
+            width: 15vw; /* Responsive image width */
+            height: auto; /* Maintain aspect ratio */
             max-height: 80px; /* Limit maximum height */
+            object-fit: contain; /* Ensures image fits well within the container */
         }
 
         .header-title {
@@ -51,14 +56,17 @@
             font-family: 'Copperplate', 'Arial Black', sans-serif;
             text-align: center;
             flex-grow: 1;
-            font-size: 4vw; /* Responsive font size */
+		display: fixed;
+            font-size: 2.4vw; /* Responsive font size */
             line-height: 1.2;
             white-space: nowrap;
+		overflow: hidden; /* Ensures the title doesn't overflow */
+            text-overflow: ellipsis; /* Adds ellipsis for overflow text */
         }
 
         .header-title span {
             display: block;
-            font-size: 2.5vw; /* Smaller size for Hindi text */
+            font-size: 2vw; /* Smaller size for Hindi text */
         }
 
         .card, .emergency-card {
@@ -74,17 +82,18 @@
 
         .card img, .emergency-card img {
             width: 20vw; /* Responsive image width */
-            height: 20vw; /* Responsive image height */
+            height: auto; /* Responsive image height */
             max-width: 90px; /* Maximum width */
             max-height: 90px; /* Maximum height */
             border-radius: 50%;
             border: 2px solid #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		object-fit: cover;
         }
 
         .card h2, .emergency-card h2 {
             margin: 2vw 0;
-            font-size: 5vw; /* Responsive font size */
+            font-size: 4vw; /* Responsive font size */
             color: #333;
         }
 
@@ -121,7 +130,7 @@
         }
 
         .button-container {
-            display: flex;
+            display: fixed;
             justify-content: space-between;
             margin-top: 2vw;
         }
@@ -143,6 +152,7 @@
         }
 
         .popup {
+		font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Change to Palatino Linotype for popup cards */
             display: none;
             position: fixed;
             top: 50%;
@@ -158,13 +168,13 @@
 
         .popup h2 {
             margin: 0 0 1vw;
-            font-size: 4vw; /* Responsive font size */
+            font-size: 3vw; /* Responsive font size */
         }
 
         .popup-content {
-            display: flex;
+            display: fixed;
             flex-direction: column;
-            gap: 2vw;
+            gap: 3vw;
             font-size: 2vw; /* Responsive font size */
         }
 
@@ -199,12 +209,12 @@
 <body>
     <header>
         <div class="header-container">
-            <img src="https://github.com/CBCMP/QR_CODE/blob/main/Screenshot%202024-06-15%20122527.png" alt="NTPC Logo">
+            <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/NTPC%20LOGO.png" alt="NTPC Logo">
             <h1 class="header-title">
                 Chatti Bariatu Coal Mining Project
                 <span>चट्टी बारीयातू कोल खनन परियोजना</span>
             </h1>
-            <img src="https://github.com/CBCMP/QR_CODE/blob/main/Screenshot%202024-09-16%20165645.png" alt="NML Logo">
+            <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/NML%20LOGO.png" alt="NML Logo">
         </div>
     </header>
 
@@ -214,7 +224,7 @@
         <h2>SAURABH KUMAR</h2>
         <div class="details">
              <div class="title"><span>EMPLOYEE ID</span>: <span>106484</span></div>
-            <div class="title"><span>CONTACT NO.</span>: <span><b>9473355688, 9740842608</b> <span class="call-icon" onclick="window.location='tel:9473355688';">📞</span></span></div>
+            <div class="title"><span>CONTACT NO.</span>: <span><b>9473355688, 9740842608</b> <span class="call-icon" onclick="window.location='tel:9473355688';" style="font-size: 1.5vw;">📞</span></span></div>
             <div class="title"><span>PROJECT/MINES</span>: <span>CBCMP, NTPC Mining Ltd.</span></div>
             <div class="title"><span>DESIGNATION</span>: <span>Sr. Astt. Engineer</span></div>
             <div class="title"><span>DEPARTMENT</span>: <span>MINING</span></div>
@@ -227,9 +237,9 @@
 
     <!-- Emergency Details Card -->
     <div class="emergency-card">
-        <h2 class="emergency-title">Emergency Details</h2>
+        <h2 class="emergency-title" style="color: red; text-align: left; font-size: 3vw;">Emergency Details</h2>
         <div class="details">
-            <div class="title"><span>Blood Group</span>: <span class="blood-group">AB- (AB Negative)</span></div>
+            <div class="title"><span>BLOOD GROUP</span>: <span class="blood-group">AB- (AB Negative)</span></div>
             <div class="title"><span>ANY MEDICAL CONDITION</span>: <span class="normal-text">No</span></div>
             <div class="title"><span>ALLERGY</span>: <span class="normal-text">No</span></div>
         </div>
@@ -244,33 +254,35 @@
     <!-- Popup for INFO -->
     <div class="popup" id="infoPopup">
         <h2>INFORMATION</h2>
-        <p><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p>
+       <p style="font-size: 2vw; margin: 0;"><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p> <!-- Removed flex property -->
         <div class="popup-content">
-            <div class="popup-row"><span>Mine Agent:</span> <span>Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650992847';">📞</span></span></div>
-            <div class="popup-row"><span>Mine Manager:</span> <span>Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';">📞</span></span></div>
-            <div class="popup-row"><span>Safety Officer:</span> <span>Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';">📞</span></span></div>
-            <div class="popup-row"><span>Reporting Officer:</span> <span>Mr. Ashok Kumar <span class="call-icon" onclick="window.location='tel:7004012898';">📞</span></span></div>
-            <div class="popup-row"><span>Emergency Contact Person:</span> <span>Mr. Ganesh Sharma <span class="call-icon" onclick="showContactNumbers()">📞</span></span></div>
-            <div class="popup-row"><span>Relation:</span> <span>Father</span></div>
-            <div class="popup-row"><span>Employee Current Address:</span> <span>Laxmi Narayan Bhawan, Gali no. 2, Yashwant Nagar, Near Markham college Hazaribagh, PIN 825301</span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Mine Agent</span> <span>:Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Mine Manager</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Safety Officer</span> <span>:Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Reporting Officer</span> <span>:Mr. Ashok Kumar <span class="call-icon" onclick="window.location='tel:7004012898';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>------------------------------</span></div>
+		<div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>EMERGENCY</span></div>
+		<div class="popup-row" style="text-align: center;"><span>Contact Person</span> <span>:Mr. Ganesh Sharma <span class="call-icon" onclick="showContactNumbers()" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Relation</span> <span>:Father</span></div>
+            <div class="popup-row" style="text-align: center;"><span>Employee Current Address</span> <span>:Laxmi Narayan Bhawan, Gali no. 2, Yashwant Nagar, Near Markham college Hazaribagh, PIN 825301</span></div>
         </div>
-        <button onclick="closePopup()">Close</button>
+         <button onclick="closePopup()" style="margin-top: 2vw;">Close</button> <!-- Removed flex property -->
     </div>
 
     <!-- Popup for SOS -->
     <div class="popup" id="sosPopup">
-        <h2 style="color: red;">SOS Alert</h2>
-        <p>In case of emergency, please contact the following:</p>
+	  <h2 style="color: red; font-size: 2.5vw;">SOS Alert</h2>
+        <p style="font-size: 2vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p> <!-- No wrapping -->
         <div class="popup-content">
-            <div class="popup-row"><span>Mine Manager (NTPC):</span> <span>9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';">📞</span></span></div>
-            <div class="popup-row"><span>Safety Officer (NTPC):</span> <span>9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';">📞</span></span></div>
-            <div class="popup-row"><span>Safety Officer (MDO):</span> <span>8340261758 <span class="call-icon" onclick="showNumbers('safetyMdoNumbers')">📞</span></span></div>
-            <div class="popup-row"><span>Ambulance (NTPC):</span> <span>9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';">📞</span></span></div>
-            <div class="popup-row"><span>Ambulance (MDO):</span> <span>7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';">📞</span></span></div>
-            <div class="popup-row"><span>Fire Tender:</span> <span>7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';">📞</span></span></div>
-            <div class="popup-row"><span>Mine Security:</span> <span>8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';">📞</span></span></div>
-        </div>
-        <button onclick="closePopup()">Close</button>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Manager (NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer (NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer (MDO)</span> <span>:8340261758 <span class="call-icon" onclick="showNumbers('safetyMdoNumbers')" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance (NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance (MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Fire Tender</span> <span>:7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Security</span> <span>:8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';" style="font-size: 1.5vw;">📞</span></span></div>
+    	  </div>
+    	  <button onclick="closePopup()" style="margin-top: 2vw;">Close</button> <!-- Removed flex property -->
     </div>
 
     <script>
