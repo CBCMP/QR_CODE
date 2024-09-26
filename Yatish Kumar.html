@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Card</title>
+    <style>
+        @font-face {
+            font-family: 'Copperplate';
+            src: local('Copperplate'), local('Copperplate Gothic Bold');
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2vw;
+        }
+
+        header {
+            background-color: #add8e6;
+            color: #000;
+            width: 90%;
+            max-width: 300px;
+            padding: 2vw 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2vw;
+		overflow: hidden; /* Prevents content from overflowing */
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 150%;
+		max-width: 500px; /* Set a maximum width if desired */
+		margin: 0 auto; /* Center align the header */
+        }
+
+        .header-container img {
+            width: 15vw; /* Responsive image width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 80px; /* Limit maximum height */
+            object-fit: contain; /* Ensures image fits well within the container */
+        }
+
+        .header-title {
+            margin: 0;
+            font-family: 'Copperplate', 'Arial Black', sans-serif;
+            text-align: center;
+            flex-grow: 1;
+		display: fixed;
+            font-size: 2.4vw; /* Responsive font size */
+            line-height: 1.2;
+            white-space: nowrap;
+		overflow: hidden; /* Ensures the title doesn't overflow */
+            text-overflow: ellipsis; /* Adds ellipsis for overflow text */
+        }
+
+        .header-title span {
+            display: block;
+            font-size: 2vw; /* Smaller size for Hindi text */
+        }
+
+        .card, .emergency-card {
+            background: #eaf7ff;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            padding: 3vw;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            margin-top: 2vw;
+        }
+
+        .card img, .emergency-card img {
+            width: 20vw; /* Responsive image width */
+            height: auto; /* Responsive image height */
+            max-width: 90px; /* Maximum width */
+            max-height: 90px; /* Maximum height */
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		object-fit: cover;
+        }
+
+        .card h2, .emergency-card h2 {
+            margin: 2vw 0;
+            font-size: 4vw; /* Responsive font size */
+            color: #333;
+        }
+
+        .details {
+            text-align: left;
+            font-size: 2vw; /* Responsive font size */
+            color: #333;
+            margin-top: 2vw;
+        }
+
+        .details .title {
+            font-weight: bold;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5vw;
+        }
+
+        .details .title span {
+            flex: 1;
+        }
+
+        .details .title span:first-child {
+            flex: 0 0 40%; /* Fixed width for label */
+        }
+
+        .blood-group {
+            color: red;
+            font-weight: bold;
+        }
+
+        .normal-text {
+            color: #555;
+        }
+
+        .button-container {
+            display: fixed;
+            justify-content: space-between;
+            margin-top: 2vw;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 2vw;
+            cursor: pointer;
+            width: 48%;
+            text-align: center;
+            font-size: 2vw; /* Responsive font size */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .popup {
+		font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Change to Palatino Linotype for popup cards */
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            padding: 4vw;
+            z-index: 10;
+            max-width: 90%;
+        }
+
+        .popup h2 {
+            margin: 0 0 1vw;
+            font-size: 3vw; /* Responsive font size */
+        }
+
+        .popup-content {
+            display: fixed;
+            flex-direction: column;
+            gap: 3vw;
+            font-size: 2vw; /* Responsive font size */
+        }
+
+        .popup-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center; 
+        }
+
+        .popup-row span {
+            flex: 1;
+            text-align: left; 
+        }
+
+        .popup-row span:first-child {
+            flex: 0 0 40%; /* Fixed width for label */
+				/* text-align: right;  Align label to the right -new*/
+    		margin-right: 5px; /* Optional space between label and value-new */
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/NTPC%20LOGO.png" alt="NTPC Logo">
+            <h1 class="header-title">
+                Chatti Bariatu Coal Mining Project
+                <span>चट्टी बारीयातू कोल खनन परियोजना</span>
+            </h1>
+            <img src="C:/Users/106543/Desktop/Siddharth_124/QR%20Code/HTML/NML%20LOGO.png" alt="NML Logo">
+        </div>
+    </header>
+
+    <!-- Yatish Kumar's Employee Card -->
+<div class="card">
+    <img src="C:\Users\106543\Desktop\Siddharth_124\QR Code\HTML\Employee Photos\Yatish Kumar.jfif" alt="Photo of Yatish Kumar">
+    <h2>YATISH KUMAR</h2>
+    <h2 style="color: BROWN; text-align: CENTER; font-size: 2.5vw;">[ MINE MANAGER ]</h2>
+    <div class="details">
+        <div class="title" style="font-size: 2.5vw;"><span>EMPLOYEE ID</span>: <span>009503</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>CONTACT NO.</span>: <span><b>9650992847</b> <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>PROJECT/MINES</span>: <span>CBCMP, NTPC Mining Ltd.</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>DESIGNATION</span>: <span>DGM (E7)</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>DEPARTMENT</span>: <span>Mining</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>OFFICIAL EMAIL</span>: <span>yatishkumar@ntpc.co.in</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>PERSONAL EMAIL</span>: <span>yatish_ntpc@rediffmail.com</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>CERTIFICATE TYPE(FMMC/SMMC)</span>: <span>FMMC</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>POST/WORK</span>: <span>MINE MANAGER</span></div>
+    </div>
+</div>
+
+
+
+<!-- Emergency Details Card -->
+<div class="emergency-card">
+    <h2 class="emergency-title" style="color: red; text-align: left; font-size: 3vw;">Emergency Details</h2>
+    <div class="details">
+        <div class="title" style="font-size: 2.5vw;"><span>BLOOD GROUP</span>: <span class="blood-group">B+</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>ANY MEDICAL CONDITION</span>: <span class="normal-text">NO</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>ALLERGY</span>: <span class="normal-text">NO</span></div>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="showPopup('infoPopup')">INFO</button>
+        <button class="button" onclick="showPopup('sosPopup')" style="color: red;">SOS ☎️</button>
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+    <!-- Popup for INFO -->
+<div class="popup" id="infoPopup">
+    <h2>INFORMATION</h2>
+    <p style="font-size: 2.5vw; margin: 0;"><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p>
+    <div class="popup-content">
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Mine Agent</span> <span>:Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650991918';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Mine Manager</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Safety Officer</span> <span>:Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Reporting Officer</span> <span>:Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650991918';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; color: red; font-size: 2.5vw;"><span>--------------------------------------------------------------</span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; color: red; font-size: 2.5vw;"><span>EMERGENCY</span></div>
+        <div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Contact Person</span> <span>:Mr. Manish Kumar <span class="call-icon" onclick="window.location='tel:7319942203';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Relation</span> <span>:Brother</span></div>
+        <div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Contact Number</span> <span>:<b>7319942203</b> <span class="call-icon" onclick="window.location='tel:7319942203';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Current Address</span> <span>:Flat no: 303, OM ENCLAVE, HIRABAG, HAZARIBAGH, Jharkhand 825301</span></div>
+    </div>
+    <button onclick="closePopup()" style="margin-top: 2vw;">Close</button>
+</div>
+
+
+    <!-- Popup for SOS -->
+    <div class="popup" id="sosPopup">
+	  <h2 style="color: red; font-size: 2.5vw;">SOS Alert</h2>
+        <p style="font-size: 2vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p> <!-- No wrapping -->
+        <div class="popup-content">
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Mine Manager(NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Safety Officer(NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Safety Officer(MDO)</span> <span>:8340261758 <span class="call-icon" onclick="window.location='tel:8340261758';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Ambulance(NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Ambulance(MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Fire Tender</span> <span>:7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Mine Security</span> <span>:8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';" style="font-size: 1.5vw;">📞</span></span></div>
+    	  </div>
+    	  <button onclick="closePopup()" style="margin-top: 2vw;">Close</button> <!-- Removed flex property -->
+    </div>
+
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            const popups = document.querySelectorAll('.popup');
+            popups.forEach(popup => {
+                popup.style.display = 'none';
+            });
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function showContactNumbers() {
+            alert('Contact Numbers for Mr. Ganesh Sharma: 9471236223, 9661537666');
+        }
+
+        function showNumbers(id) {
+            alert('Safety Officer (MDO) Numbers: 8340261758');
+        }
+    </script>
+</body>
+</html>
