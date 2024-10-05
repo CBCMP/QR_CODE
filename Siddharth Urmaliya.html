@@ -22,18 +22,19 @@
 
         header {
             background-color: #add8e6;
-            color: #000;
-            width: 90%;
-            max-width: 300px;
-            padding: 2vw 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2vw;
-		overflow: hidden; /* Prevents content from overflowing */
-        }
+    color: #000;
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Maximum width of the header */
+    min-width: 300px; /* Minimum width of the header */
+    padding: 2vw 1vw; /* Padding for spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2vw;
+    margin-left: auto; /* Center the header horizontally */
+    margin-right: auto; /* Center the header horizontally */
 
         .header-container {
             display: flex;
@@ -225,15 +226,15 @@
     <img src="Siddharth.jpg" alt="Photo of Siddharth Kumar Urmaliya">
     <h2>SIDDHARTH KUMAR URMALIYA</h2>
     <div class="details">
-        <div class="title"><span>EMPLOYEE ID</span>: <span>106543</span></div>
-        <div class="title"><span>CONTACT NO.</span>: <span><b>7225951283</b> <span class="call-icon" onclick="window.location='tel:7225951283';" style="font-size: 1.5vw;">📞</span></span></div>
-        <div class="title"><span>PROJECT/MINES</span>: <span>CBCMP, NTPC Mining Ltd.</span></div>
-        <div class="title"><span>DESIGNATION</span>: <span>Sr. Astt. Engineer (E1)</span></div>
-        <div class="title"><span>DEPARTMENT</span>: <span>MINING</span></div>
-        <div class="title"><span>OFFICIAL EMAIL</span>: <span>siddharthurmaliya@ntpc.co.in</span></div>
-        <div class="title"><span>PERSONAL EMAIL</span>: <span>siddharthurmaliya@gmail.com</span></div>
-        <div class="title"><span>CERTIFICATE TYPE(FMMC/SMMC)</span>: <span>SMMC</span></div>
-        <div class="title"><span>POST/WORK</span>: <span>Planning & Surveying</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>EMPLOYEE ID</span>: <span>106543</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>CONTACT NO.</span>: <span><b>7225951283</b> <span class="call-icon" onclick="window.location='tel:7225951283';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>PROJECT/MINES</span>: <span>CBCMP, NTPC Mining Ltd.</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>DESIGNATION</span>: <span>Sr. Astt. Engineer (E1)</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>DEPARTMENT</span>: <span>MINING</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>OFFICIAL EMAIL</span>: <span>siddharthurmaliya@ntpc.co.in</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>PERSONAL EMAIL</span>: <span>siddharthurmaliya@gmail.com</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>CERTIFICATE TYPE(FMMC/SMMC)</span>: <span>SMMC</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>POST/WORK</span>: <span>Planning & Surveying</span></div>
     </div>
 </div>
 
@@ -241,9 +242,9 @@
 <div class="emergency-card">
     <h2 class="emergency-title" style="color: red; text-align: left; font-size: 3vw;">Emergency Details</h2>
     <div class="details">
-        <div class="title"><span>BLOOD GROUP</span>: <span class="blood-group">O+ (O Positive)</span></div>
-        <div class="title"><span>ANY MEDICAL CONDITION</span>: <span class="normal-text">NO</span></div>
-        <div class="title"><span>ALLERGY</span>: <span class="normal-text">NO</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>BLOOD GROUP</span>: <span class="blood-group">O+ (O Positive)</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>ANY MEDICAL CONDITION</span>: <span class="normal-text">NO</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>ALLERGY</span>: <span class="normal-text">NO</span></div>
     </div>
     <div class="button-container">
         <button class="button" onclick="showPopup('infoPopup')">INFO</button>
@@ -255,19 +256,19 @@
 
     <!-- Popup for INFO -->
 <div class="popup" id="infoPopup">
-    <h2>INFORMATION</h2>
-    <p style="font-size: 2vw; margin: 0;"><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p>
+    <h2 style="font-size: 3vw;">INFORMATION</h2>
+    <p style="font-size: 2.5vw; margin: 0;"><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p>
     <div class="popup-content">
-        <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Mine Agent</span> <span>:Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-        <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Mine Manager</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-        <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Safety Officer</span> <span>:Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
-        <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Reporting Officer</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-        <div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>--------------------------------------------------------------</span></div>
-        <div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>EMERGENCY</span></div>
-        <div class="popup-row" style="text-align: center;"><span>Contact Person</span> <span>:Mr. Anil Urmaliya <span class="call-icon" onclick="window.location='tel:9589169916';" style="font-size: 1.5vw;">📞</span></span></div>
-        <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Relation</span> <span>:Father</span></div>
-        <div class="popup-row" style="text-align: center;"><span>Contact Number</span> <span>:<b>9589169916</b> <span class="call-icon" onclick="window.location='tel:9589169916';" style="font-size: 1.5vw;">📞</span></span></div>
-        <div class="popup-row" style="text-align: center;"><span>Current Address</span> <span>:NTPC Sikri Township, Barkagaon, Hazaribagh, PN- 825311</span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Mine Agent</span> <span>:Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Mine Manager</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Safety Officer</span> <span>:Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Reporting Officer</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; color: red; font-size: 2.5vw;"><span>--------------------------------------------------------------</span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; color: red; font-size: 2.5vw;"><span>EMERGENCY</span></div>
+        <div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Contact Person</span> <span>:Mr. Anil Urmaliya <span class="call-icon" onclick="window.location='tel:9589169916';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Relation</span> <span>:Father</span></div>
+        <div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Contact Number</span> <span>:<b>9589169916</b> <span class="call-icon" onclick="window.location='tel:9589169916';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Current Address</span> <span>:NTPC Sikri Township, Barkagaon, Hazaribagh, PN- 825311</span></div>
     </div>
     <button onclick="closePopup()" style="margin-top: 2vw;">Close</button>
 </div>
@@ -277,16 +278,16 @@
 
     <!-- Popup for SOS -->
     <div class="popup" id="sosPopup">
-	  <h2 style="color: red; font-size: 2.5vw;">SOS Alert</h2>
-        <p style="font-size: 2vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p> <!-- No wrapping -->
+	  <h2 style="color: red; font-size: 3vw;">SOS Alert</h2>
+        <p style="font-size: 2.5vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p> <!-- No wrapping -->
         <div class="popup-content">
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Manager(NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer(NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer(MDO)</span> <span>:8340261758 <span class="call-icon" onclick="window.location='tel:8340261758';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance(NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance(MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Fire Tender</span> <span>:7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Security</span> <span>:8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Mine Manager(NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Safety Officer(NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Safety Officer(MDO)</span> <span>:8340261758 <span class="call-icon" onclick="window.location='tel:8340261758';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Ambulance(NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Ambulance(MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Fire Tender</span> <span>:7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Mine Security</span> <span>:8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';" style="font-size: 1.5vw;">📞</span></span></div>
     	  </div>
     	  <button onclick="closePopup()" style="margin-top: 2vw;">Close</button> <!-- Removed flex property -->
     </div>
