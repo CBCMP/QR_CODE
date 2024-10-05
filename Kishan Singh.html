@@ -22,16 +22,19 @@
 
         header {
             background-color: #add8e6;
-            color: #000;
-            width: 90%;
-            max-width: 300px;
-            padding: 2vw 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2vw;
+    		color: #000;
+    		width: 100%; /* Full width */
+    		max-width: 1200px; /* Maximum width of the header */
+    		min-width: 300px; /* Minimum width of the header */
+    		padding: 2vw 1vw; /* Padding for spacing */
+    		display: flex;
+    		justify-content: space-between;
+    		align-items: center;
+    		border-radius: 8px;
+    		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    		margin-bottom: 2vw;
+		margin-left: auto; /* Center the header horizontally */
+		margin-right: auto; /* Center the header horizontally */
 		overflow: hidden; /* Prevents content from overflowing */
         }
 
@@ -57,7 +60,7 @@
             text-align: center;
             flex-grow: 1;
 		display: fixed;
-            font-size: 2.4vw; /* Responsive font size */
+            font-size: 3.5vw; /* Responsive font size */
             line-height: 1.2;
             white-space: nowrap;
 		overflow: hidden; /* Ensures the title doesn't overflow */
@@ -66,7 +69,7 @@
 
         .header-title span {
             display: block;
-            font-size: 2vw; /* Smaller size for Hindi text */
+            font-size: 3vw; /* Smaller size for Hindi text */
         }
 
         .card, .emergency-card {
@@ -225,17 +228,17 @@
     <img src="Kishan Singh.jpg" alt="Photo of Kishan Kumar Singh">
     <h2>KISHAN KUMAR SINGH</h2>
     <div class="details">
-        <div class="title"><span>EMPLOYEE ID</span>: <span>106475</span></div>
-        <div class="title"><span>CONTACT NO.</span>: <span><b>7627073340, 9511580318</b> <span class="call-icon" onclick="window.location='tel:7627073340';" style="font-size: 1.5vw;">📞</span></span></div>
-        <div class="title"><span>PROJECT/MINES</span>: <span>CBCMP, NTPC Mining Ltd.</span></div>
-        <div class="title"><span>DESIGNATION</span>: <span>Sr. Astt. Engineer (E1)</span></div>
-        <div class="title"><span>DEPARTMENT</span>: <span>MINING</span></div>
-        <div class="title"><span>OFFICIAL EMAIL</span>: <span>kksingh02@ntpc.co.in</span></div>
-        <div class="title"><span>PERSONAL EMAIL</span>: <span>kishan28singh98@gmail.com</span></div>
-        <div class="title"><span>CERTIFICATE TYPE(FMMC/SMMC)</span>: <span>NA</span></div>
-        <div class="title"><span>POST/WORK</span>: <span>Shift Operations (Relay A)</span></div>
-        <div class="title"><span>SHIFT INCHARGE</span>: <span>Mr. Rabi Tudu</span></div>
-        <div class="title"><span>S/I CONTACT NO.</span>: <span><b>9470197269</b> <span class="call-icon" onclick="window.location='tel:9470197269';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>EMPLOYEE ID</span>: <span>106475</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>CONTACT NO.</span>: <span><b>7627073340, 9511580318</b> <span class="call-icon" onclick="window.location='tel:7627073340';" style="font-size: 1.5vw;">📞</span></span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>PROJECT/MINES</span>: <span>CBCMP, NTPC Mining Ltd.</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>DESIGNATION</span>: <span>Sr. Astt. Engineer (E1)</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>DEPARTMENT</span>: <span>MINING</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>OFFICIAL EMAIL</span>: <span>kksingh02@ntpc.co.in</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>PERSONAL EMAIL</span>: <span>kishan28singh98@gmail.com</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>CERTIFICATE TYPE(FMMC/SMMC)</span>: <span>NA</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>POST/WORK</span>: <span>Shift Operations (Relay A)</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>SHIFT INCHARGE</span>: <span>Mr. Rabi Tudu</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>S/I CONTACT NO.</span>: <span><b>9470197269</b> <span class="call-icon" onclick="window.location='tel:9470197269';" style="font-size: 1.5vw;">📞</span></span></div>
     </div>
 </div>
 
@@ -244,9 +247,9 @@
 <div class="emergency-card">
     <h2 class="emergency-title" style="color: red; text-align: left; font-size: 3vw;">Emergency Details</h2>
     <div class="details">
-        <div class="title"><span>BLOOD GROUP</span>: <span class="blood-group">B+</span></div>
-        <div class="title"><span>ANY MEDICAL CONDITION</span>: <span class="normal-text">NO</span></div>
-        <div class="title"><span>ALLERGY</span>: <span class="normal-text">NO</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>BLOOD GROUP</span>: <span class="blood-group">B+</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>ANY MEDICAL CONDITION</span>: <span class="normal-text">NO</span></div>
+        <div class="title" style="font-size: 2.5vw;"><span>ALLERGY</span>: <span class="normal-text">NO</span></div>
     <div class="button-container">
         <button class="button" onclick="showPopup('infoPopup')">INFO</button>
         <button class="button" onclick="showPopup('sosPopup')" style="color: red;">SOS ☎️</button>
@@ -257,35 +260,35 @@
 
 <!-- Popup for INFO -->
     <div class="popup" id="infoPopup">
-        <h2>INFORMATION</h2>
-       <p style="font-size: 2vw; margin: 0;"><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p> <!-- Removed flex property -->
+        <h2 style="font-size: 3vw; text-align: left;">INFORMATION</h2>
+       <p style="font-size: 2.5vw; margin: 0;"><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p> <!-- Removed flex property -->
         <div class="popup-content">
-            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Mine Agent</span> <span>:Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Mine Manager</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Safety Officer</span> <span>:Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
-            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Reporting Officer</span> <span>:Mr. Rabi Tudu <span class="call-icon" onclick="window.location='tel:9470197269';" style="font-size: 1.5vw;">📞</span></span></div>
-            <div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>--------------------------------------------------------------</span></div>
-		<div class="popup-row" style="white-space: nowrap;text-align: center; color: red;"><span>EMERGENCY</span></div>
-		<div class="popup-row" style="text-align: center;"><span>Contact Person</span> <span>:Mr. Bishwajit Behura <span class="call-icon" onclick="window.location='tel:7978020725';" style="font-size: 1.5vw;">📞</span></span></div>
-            <div class="popup-row" style="white-space: nowrap;text-align: center;"><span>Relation</span> <span>:Friend</span></div>
-		<div class="popup-row" style="text-align: center;"><span>Contact Number</span> <span>:8093807313 <span class="call-icon" onclick="window.location='tel:8093807313';" style="font-size: 1.5vw;">📞</span></span></div>
-            <div class="popup-row" style="text-align: center;"><span>Employee Current Address</span> <span>:Shail Chandra Apartment, near Zulu park, Hazaribagh, 825301</span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Mine Agent</span> <span>:Mr. Pavan V. Khandwe <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Mine Manager</span> <span>:Mr. Yatish Kumar <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Safety Officer</span> <span>:Mr. S. K. Mohanty <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Reporting Officer</span> <span>:Mr. Rabi Tudu <span class="call-icon" onclick="window.location='tel:9470197269';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center; color: red; font-size: 2.5vw;"><span>--------------------------------------------------------------</span></div>
+		<div class="popup-row" style="white-space: nowrap;text-align: center; color: red; font-size: 2.5vw;"><span>EMERGENCY</span></div>
+		<div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Contact Person</span> <span>:Mr. Bishwajit Behura <span class="call-icon" onclick="window.location='tel:7978020725';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="white-space: nowrap;text-align: center; font-size: 2.5vw;"><span>Relation</span> <span>:Friend</span></div>
+		<div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Contact Number</span> <span>:8093807313 <span class="call-icon" onclick="window.location='tel:8093807313';" style="font-size: 1.5vw;">📞</span></span></div>
+            <div class="popup-row" style="text-align: center; font-size: 2.5vw;"><span>Employee Current Address</span> <span>:Shail Chandra Apartment, near Zulu park, Hazaribagh, 825301</span></div>
         </div>
          <button onclick="closePopup()" style="margin-top: 2vw;">Close</button> <!-- Removed flex property -->
     </div>
 
     <!-- Popup for SOS -->
     <div class="popup" id="sosPopup">
-	  <h2 style="color: red; font-size: 2.5vw; text-align: left;">SOS Alert</h2>
-        <p style="font-size: 2vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p> <!-- No wrapping -->
+	  <h2 style="color: red; font-size: 3vw; text-align: left;">SOS Alert</h2>
+        <p style="font-size: 2.5vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p> <!-- No wrapping -->
         <div class="popup-content">
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Manager(NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer(NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Safety Officer(MDO)</span> <span>:8340261758 <span class="call-icon" onclick="window.location='tel:8340261758';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance(NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Ambulance(MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Fire Tender</span> <span>:7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;"><span>Mine Security</span> <span>:8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Mine Manager(NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Safety Officer(NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Safety Officer(MDO)</span> <span>:8340261758 <span class="call-icon" onclick="window.location='tel:8340261758';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Ambulance(NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Ambulance(MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Fire Tender</span> <span>:7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';" style="font-size: 1.5vw;">📞</span></span></div>
+        	<div class="popup-row" style="white-space: nowrap; text-align: center; font-size: 2.5vw;"><span>Mine Security</span> <span>:8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';" style="font-size: 1.5vw;">📞</span></span></div>
     	  </div>
     	  <button onclick="closePopup()" style="margin-top: 2vw;">Close</button> <!-- Removed flex property -->
     </div>
