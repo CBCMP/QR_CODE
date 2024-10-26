@@ -22,17 +22,19 @@
 
         header {
             background-color: #add8e6;
-            color: #000;
-            width: 90%;
-            max-width: 300px;
-            padding: 2vw 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2vw;
-		overflow: hidden; /* Prevents content from overflowing */
+    		color: #000;
+    		width: 100%; /* Full width */
+    		max-width: 1200px; /* Maximum width of the header */
+    		min-width: 300px; /* Minimum width of the header */
+    		padding: 2vw 1vw; /* Padding for spacing */
+    		display: flex;
+    		justify-content: space-between;
+    		align-items: center;
+    		border-radius: 8px;
+    		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    		margin-bottom: 2vw;
+    		margin-left: auto; /* Center the header horizontally */
+    		margin-right: auto; /* Center the header horizontally */
         }
 
         .header-container {
@@ -57,7 +59,7 @@
             text-align: center;
             flex-grow: 1;
 		display: fixed;
-            font-size: 2.4vw; /* Responsive font size */
+            font-size: 3vw; /* Responsive font size */
             line-height: 1.2;
             white-space: nowrap;
 		overflow: hidden; /* Ensures the title doesn't overflow */
@@ -66,7 +68,7 @@
 
         .header-title span {
             display: block;
-            font-size: 2vw; /* Smaller size for Hindi text */
+            font-size: 2.2vw; /* Smaller size for Hindi text */
         }
 
         .card, .emergency-card {
@@ -220,9 +222,9 @@
         </div>
     </header>
 
-    <!-- Yatish Kumar's Employee Card -->
+   <!-- Yatish Kumar's Employee Card -->
 <div class="card">
-    <img src="OIP.jfif" alt="Photo of Yatish Kumar">
+    <img src="C:\Users\106543\Desktop\Siddharth_124\QR Code\HTML\Employee Photos\Yatish Kumar.jfif" alt="Photo of Yatish Kumar">
     <h2>YATISH KUMAR</h2>
     <h2 style="color: BROWN; text-align: CENTER; font-size: 2.5vw;">[ MINE MANAGER ]</h2>
     <div class="details">
@@ -237,8 +239,6 @@
         <div class="title" style="font-size: 2.5vw;"><span>POST/WORK</span>: <span>MINE MANAGER</span></div>
     </div>
 </div>
-
-
 
 <!-- Emergency Details Card -->
 <div class="emergency-card">
@@ -256,7 +256,7 @@
 
 <div class="overlay" id="overlay"></div>
 
-    <!-- Popup for INFO -->
+<!-- Popup for INFO -->
 <div class="popup" id="infoPopup">
     <h2>INFORMATION</h2>
     <p style="font-size: 2.5vw; margin: 0;"><strong>Chatti Bariatu Coal Mining Project, Pagar Office</strong></p>
@@ -277,20 +277,69 @@
 
 
     <!-- Popup for SOS -->
-    <div class="popup" id="sosPopup">
-	  <h2 style="color: red; font-size: 2.5vw;">SOS Alert</h2>
-        <p style="font-size: 2vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p> <!-- No wrapping -->
-        <div class="popup-content">
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Mine Manager(NTPC)</span> <span>:9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Safety Officer(NTPC)</span> <span>:9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Safety Officer(MDO)</span> <span>:8340261758 <span class="call-icon" onclick="window.location='tel:8340261758';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Ambulance(NTPC)</span> <span>:9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Ambulance(MDO)</span> <span>:7044382754 <span class="call-icon" onclick="window.location='tel:7044382754';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Fire Tender</span> <span>:7654269065 <span class="call-icon" onclick="window.location='tel:7654269065';" style="font-size: 1.5vw;">📞</span></span></div>
-        	<div class="popup-row" style="white-space: nowrap; text-align: center;font-size: 2vw;"><span>Mine Security</span> <span>:8340490025 <span class="call-icon" onclick="window.location='tel:8340490025';" style="font-size: 1.5vw;">📞</span></span></div>
-    	  </div>
-    	  <button onclick="closePopup()" style="margin-top: 2vw;">Close</button> <!-- Removed flex property -->
+<div class="popup" id="sosPopup">
+    <h2 style="color: red; font-size: 3vw; text-align: left;">SOS Alert</h2>
+    <p style="font-size: 2.5vw; margin: 0; white-space: nowrap;">In case of emergency, please contact the following:</p>
+    <div class="popup-content">
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Mine Timekeeper</span>
+            <span style="flex: 1; text-align: center;">: 9031029525 <span class="call-icon" onclick="window.location='tel:9031029525';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Shift Incharge (NTPC)</span>
+            <span style="flex: 1; text-align: center;">: 9102028799 <span class="call-icon" onclick="window.location='tel:9102028799';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Control Room</span>
+            <span style="flex: 1; text-align: center;">: 9031029524 <span class="call-icon" onclick="window.location='tel:9031029524';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">ALS Ambulance (NTPC)</span>
+            <span style="flex: 1; text-align: center;">: 9311807837 <span class="call-icon" onclick="window.location='tel:9311807837';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Ambulance (CBCMPL)</span>
+            <span style="flex: 1; text-align: center;">: 7542086956 <span class="call-icon" onclick="window.location='tel:7542086956';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Fire Tender</span>
+            <span style="flex: 1; text-align: center;">: 9031029521 <span class="call-icon" onclick="window.location='tel:9031029521';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Mines Security (QRT-CB)</span>
+            <span style="flex: 1; text-align: center;">: 9031029522 <span class="call-icon" onclick="window.location='tel:9031029522';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">First Aid Station</span>
+            <span style="flex: 1; text-align: center;">: 9031029523 <span class="call-icon" onclick="window.location='tel:9031029523';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Safety Officer (CBCMPL)</span>
+            <span style="flex: 1; text-align: center;">: 8340261758 <span class="call-icon" onclick="window.location='tel:8340261758';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Safety Officer (NTPC)</span>
+            <span style="flex: 1; text-align: center;">: 9437069793 <span class="call-icon" onclick="window.location='tel:9437069793';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">Mines Manager (NTPC)</span>
+            <span style="flex: 1; text-align: center;">: 9650992847 <span class="call-icon" onclick="window.location='tel:9650992847';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">SISF Security</span>
+            <span style="flex: 1; text-align: center;">: 8789913780, 9905391916 <span class="call-icon" onclick="window.location='tel:8789913780';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">DGR Security</span>
+            <span style="flex: 1; text-align: center;">: 8448955939, 9401910248 <span class="call-icon" onclick="window.location='tel:8448955939';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
+        <div class="popup-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 2.5vw; white-space: nowrap;">
+            <span style="flex: 1; text-align: left;">DGR Security</span>
+            <span style="flex: 1; text-align: center;">: 7070100950 (For night shift) <span class="call-icon" onclick="window.location='tel:7070100950';" style="font-size: 1.5vw;">📞</span></span>
+        </div>
     </div>
+    <button onclick="closePopup()" style="margin-top: 2vw;">Close</button>
+</div>
 
     <script>
         function showPopup(id) {
